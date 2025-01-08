@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';  // Importing Next.js Link
-import Logo from '../public/IMG-20250105-WA0089(1).jpg'; // Import the background image
+import Logo from '../public/IMG-20250105-WA0089(1).jpg';
 
 const Navbar: React.FC = () => {
   const navbarStyle: React.CSSProperties = {
@@ -60,23 +60,23 @@ const Navbar: React.FC = () => {
     <div style={navbarStyle}>
       <div className="logo">
         {/* Use a direct path to the image in the public folder */}
-        <img src="/IMG-20250105-WA0089(1).jpg" alt="Dish Decider Logo" style={Logo} />
+        <img src="/IMG-20250105-WA0089(1).jpg" alt="Dish Decider Logo" style={logoStyle} />
       </div>
       <nav>
         <ul style={navLinksStyle}>
           <li>
             <Link href="/" passHref>
-              <a style={linkStyle}>Home</a>
+              <span style={linkStyle}>Home</span>
             </Link>
           </li>
           <li>
             <Link href="/mealplanner" passHref>
-              <a style={linkStyle}>Meal Planner</a>
+              <span style={linkStyle}>Meal Planner</span>
             </Link>
           </li>
           <li>
             <Link href="/contactus" passHref>
-              <a style={linkStyle}>Contact Us</a>
+              <span style={linkStyle}>Contact Us</span>
             </Link>
           </li>
         </ul>
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
       <div style={searchLoginStyle}>
         <input type="text" style={searchBarStyle} placeholder="🔍 Search..." />
         <Link href="/login" passHref>
-          <a style={loginLinkStyle}>Login</a>
+          <span style={loginLinkStyle}>Login</span>
         </Link>
       </div>
     </div>

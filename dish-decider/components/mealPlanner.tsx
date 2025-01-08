@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// No need to import images like this in Next.js for public folder usage
+import Link from 'next/link'; // Importing Next.js Link
 
 const MealPlanner: React.FC = () => {
   const mealImages: string[] = [
@@ -69,33 +69,34 @@ const MealPlanner: React.FC = () => {
             }}
           >
             {mealImages.map((image, index) => (
-              <div
-                className="grid-item"
-                key={index}
-                style={{
-                  position: 'relative',
-                  cursor: 'pointer',
-                  overflow: 'hidden',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                }}
-                onClick={() => handleMealClick(index)}
-              >
-                <img
-                  src={image}
-                  alt={`Meal ${index + 1}`}
-                  className={`meal-image ${selectedMeals.includes(index) ? 'selected' : ''}`}
+              <Link key={index} href={`/meal-details/${index}`} passHref>
+                <div
+                  className="grid-item"
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    position: 'relative',
+                    cursor: 'pointer',
+                    overflow: 'hidden',
                     borderRadius: '8px',
-                    transition: 'transform 0.3s ease',
-                    transform: selectedMeals.includes(index) ? 'scale(1.05)' : 'none',
-                    border: selectedMeals.includes(index) ? '3px solid #ff6347' : 'none',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
-                />
-              </div>
+                  onClick={() => handleMealClick(index)}
+                >
+                  <img
+                    src={image}
+                    alt={`Meal ${index + 1}`}
+                    className={`meal-image ${selectedMeals.includes(index) ? 'selected' : ''}`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '8px',
+                      transition: 'transform 0.3s ease',
+                      transform: selectedMeals.includes(index) ? 'scale(1.05)' : 'none',
+                      border: selectedMeals.includes(index) ? '3px solid #ff6347' : 'none',
+                    }}
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </div>

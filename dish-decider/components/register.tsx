@@ -1,6 +1,5 @@
 import React, { CSSProperties, FormEvent } from 'react';
 import { useRouter } from 'next/router'; // Import the useRouter hook from Next.js
-import backgroundImage from '../public/pexels-alesiakozik-6544243.jpg'; // Import the background image
 
 const Register: React.FC = () => {
   const router = useRouter(); // Initialize the useRouter hook
@@ -21,7 +20,7 @@ const Register: React.FC = () => {
       justifyContent: 'center',
       alignItems: 'center',
       minHeight: '100vh',
-      backgroundImage: `url(${backgroundImage})`,
+      backgroundImage: `url('/pexels-alesiakozik-6544243.jpg')`, // Use string directly for the background image
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center center',
       backgroundSize: 'cover',

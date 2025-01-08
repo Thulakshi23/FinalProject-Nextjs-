@@ -60,6 +60,7 @@ const Login: React.FC = () => {
       margin: '10px 0',
       textDecoration: 'none',
       fontSize: '0.9rem',
+      color: '#ffc107',
     },
     registerButton: {
       background: 'none',
@@ -110,9 +111,9 @@ const Login: React.FC = () => {
             Login
           </button>
         </form>
-        <a href="/forgot-password" className="forgot-password" style={styles.forgotPassword}>
-          Forgot password?
-        </a>
+        <Link href="/forgot-password" passHref>
+          <a style={styles.forgotPassword}>Forgot password?</a>
+        </Link>
         <p>
           Don't have an account yet?{' '}
           <Link href="/register" passHref>
